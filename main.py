@@ -1,18 +1,18 @@
 import streamlit as st
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont
 import os
 
-st.title("BASTARD Style Cover Generator")
-
-uploaded_image = st.file_uploader("Upload a background image (jpg, png)", type=["jpg", "jpeg", "png"])
+st.title("Bastard Style Cover Generator")
 
 custom_text = st.text_input("Type your custom word or phrase", value="bastard")
 
 FONT_PATH = "fonts/CooperBlack.ttf"
 
-def add_bastard_text(img, text, font_path):
+IMAGES_PATH = "images/"
 
-  img = img.convert("RGB")
+def add_bastard_text(background_img, text, font_path):
+
+  img = background_img.convert("RGB")
   img = img.resize((800, 800))
 
   draw = ImageDraw.Draw(img)
@@ -27,11 +27,17 @@ def add_bastard_text(img, text, font_path):
 
   return img
 
-if uploaded_image and custom_text:
+if custom_text:
   
-  img = Image.open(uploaded_image)
+  image_file = os.path.join(IMAGES_PATH, "sample.jpg")
 
-  final_img = add_bastard_text(img, custom_text, FONT_PATH)
+  if os.path exists(image_file):
+
+    background = Image.open(image_file)
+else:
+  st.error(f"No background image found in {IMAGES_PATH}. Please make sure sample.jpg exists.")
+  
+  final_img = add_bastard_text(background, custom_text, FONT_PATH)
 
   st.image(final_img, caption="Generated Cover", use_column_width=True)
 
