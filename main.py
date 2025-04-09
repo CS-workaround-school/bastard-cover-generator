@@ -16,7 +16,7 @@ FONT_PATH = "fonts/CooperBlack.ttf"
 
 def add_bastard_style_cover(img, text, font_path):
 
-  img = Image.open(img_path).convert("RGB")
+  img = img.convert("RGB")
   img = img.resize((800, 800))
 
 draw = ImageDraw.Draw(img)
@@ -28,7 +28,6 @@ x = (img.width - text_width) // 2
 y = (img.height - text_height) // 2
 
 draw.text((x, y), text, font=font, fill=(0, 255, 255))
-
 return img
 
 if uploaded_image and custom_text:
