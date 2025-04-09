@@ -8,7 +8,7 @@ custom_text = st.text_input("Type your custom word or phrase", value="bastard")
 
 FONT_PATH = "fonts/CooperBlack.ttf"
 
-IMAGES_PATH = "images/"
+IMAGES_PATH = "images/sample.jpg"
 
 def add_bastard_text(background_img, text, font_path):
 
