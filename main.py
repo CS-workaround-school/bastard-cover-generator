@@ -4,7 +4,7 @@ import os
 
 st.title("BASTARD Style Cover Generator")
 
-uploaded_image = st.file_uploader("Upload a background image (jpg, png)". type=["jpg", "jpeg", "png"])
+uploaded_image = st.file_uploader("Upload a background image (jpg, png)", type=["jpg", "jpeg", "png"])
 
 if uploaded_image is not None:
   img = Image.open(uploaded_image)
