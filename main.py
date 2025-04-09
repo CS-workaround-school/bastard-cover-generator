@@ -31,7 +31,7 @@ if custom_text:
   
   image_file = os.path.join(IMAGES_PATH, "sample.jpg")
 
-  if os.path exists(image_file):
+  if os.path.exists(image_file):
 
     background = Image.open(image_file)
 else:
