@@ -6,6 +6,10 @@ st.title("BASTARD Style Cover Generator")
 
 uploaded_image = st.file_uploader("Upload a background image (jpg, png)". type=["jpg", "jpeg", "png"])
 
+if uploaded_image is not None:
+  img = Image.open(uploaded_image)
+  st.image(img, caption="Uploaded Image", use_column_width=True)
+
 custom_text = st.text_input("Type your custom word or phrase", value="bastard")
 
 FONT_PATH = "fonts/CooperBlack.ttf"
