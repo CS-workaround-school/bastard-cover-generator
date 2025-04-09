@@ -6,9 +6,9 @@ st.title("Bastard Style Cover Generator")
 
 custom_text = st.text_input("Type your custom word or phrase", value="bastard")
 
-FONT_PATH = "fonts/CooperBlack.ttf"
+FONT_PATH = "CooperBlack.ttf"
 
-IMAGES_PATH = "images/sample.jpg"
+IMAGES_PATH = "sample.jpg"
 
 def add_bastard_text(background_img, text, font_path):
 
